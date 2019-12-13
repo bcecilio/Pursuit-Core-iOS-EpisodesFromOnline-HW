@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7E92C8923A424D20047F0F3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8823A424D20047F0F3 /* AppError.swift */; };
+		B7E92C8B23A424DC0047F0F3 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8A23A424DC0047F0F3 /* NetworkHelper.swift */; };
+		B7E92C8E23A425260047F0F3 /* Shows+EpisodesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8D23A425260047F0F3 /* Shows+EpisodesAPIClient.swift */; };
+		B7E92C9023A425A20047F0F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8F23A425A20047F0F3 /* ViewController.swift */; };
+		B7E92C9223A425B80047F0F3 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C9123A425B80047F0F3 /* DetailController.swift */; };
+		B7E92C9423A426500047F0F3 /* EpisodesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C9323A426500047F0F3 /* EpisodesController.swift */; };
+		B7E92C9723A426B90047F0F3 /* ShowsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C9623A426B90047F0F3 /* ShowsCell.swift */; };
+		B7E92C9923A426CD0047F0F3 /* EpisodesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C9823A426CD0047F0F3 /* EpisodesCell.swift */; };
 		CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5B232178AF002D0255 /* AppDelegate.swift */; };
 		CD01CD5E232178AF002D0255 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5D232178AF002D0255 /* ViewController.swift */; };
 		CD01CD61232178AF002D0255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD01CD5F232178AF002D0255 /* Main.storyboard */; };
@@ -26,6 +34,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7E92C8823A424D20047F0F3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		B7E92C8A23A424DC0047F0F3 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		B7E92C8D23A425260047F0F3 /* Shows+EpisodesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shows+EpisodesAPIClient.swift"; sourceTree = "<group>"; };
+		B7E92C8F23A425A20047F0F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B7E92C9123A425B80047F0F3 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		B7E92C9323A426500047F0F3 /* EpisodesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesController.swift; sourceTree = "<group>"; };
+		B7E92C9623A426B90047F0F3 /* ShowsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowsCell.swift; sourceTree = "<group>"; };
+		B7E92C9823A426CD0047F0F3 /* EpisodesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesCell.swift; sourceTree = "<group>"; };
 		CD01CD58232178AF002D0255 /* Pursuit-Core-iOS-Episodes-from-Online.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Episodes-from-Online.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD01CD5B232178AF002D0255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD01CD5D232178AF002D0255 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,9 +72,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7E92C8C23A424E30047F0F3 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				B7E92C8A23A424DC0047F0F3 /* NetworkHelper.swift */,
+				B7E92C8823A424D20047F0F3 /* AppError.swift */,
+				B7E92C8D23A425260047F0F3 /* Shows+EpisodesAPIClient.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		B7E92C9523A426570047F0F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B7E92C8F23A425A20047F0F3 /* ViewController.swift */,
+				B7E92C9323A426500047F0F3 /* EpisodesController.swift */,
+				B7E92C9123A425B80047F0F3 /* DetailController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B7E92C9A23A426D10047F0F3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B7E92C9623A426B90047F0F3 /* ShowsCell.swift */,
+				B7E92C9823A426CD0047F0F3 /* EpisodesCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CD01CD4F232178AF002D0255 = {
 			isa = PBXGroup;
 			children = (
+				B7E92C9A23A426D10047F0F3 /* Cells */,
+				B7E92C9523A426570047F0F3 /* Views */,
+				B7E92C8C23A424E30047F0F3 /* Network Services */,
 				CD01CD5A232178AF002D0255 /* Pursuit-Core-iOS-Episodes-from-Online */,
 				CD01CD6F232178B2002D0255 /* Pursuit-Core-iOS-Episodes-from-OnlineTests */,
 				CD01CD59232178AF002D0255 /* Products */,
@@ -197,8 +245,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E92C9023A425A20047F0F3 /* ViewController.swift in Sources */,
+				B7E92C9223A425B80047F0F3 /* DetailController.swift in Sources */,
+				B7E92C9723A426B90047F0F3 /* ShowsCell.swift in Sources */,
+				B7E92C9923A426CD0047F0F3 /* EpisodesCell.swift in Sources */,
+				B7E92C8E23A425260047F0F3 /* Shows+EpisodesAPIClient.swift in Sources */,
+				B7E92C9423A426500047F0F3 /* EpisodesController.swift in Sources */,
+				B7E92C8B23A424DC0047F0F3 /* NetworkHelper.swift in Sources */,
 				CD01CD5E232178AF002D0255 /* ViewController.swift in Sources */,
 				CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */,
+				B7E92C8923A424D20047F0F3 /* AppError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
