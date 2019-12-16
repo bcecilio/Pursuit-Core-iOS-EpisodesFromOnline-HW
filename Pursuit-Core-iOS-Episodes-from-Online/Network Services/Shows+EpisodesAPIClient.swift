@@ -9,7 +9,7 @@
 import Foundation
 
 struct ShowsSearchAPI {
-    static func fetchShows(for searchQuery: String, completion: @escaping (Result<[ShowData], AppError>)-> ()) {
+    static func fetchShows(for searchQuery: String, completion: @escaping (Result<Show, AppError>)-> ()) {
         
         let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "girls"
         
