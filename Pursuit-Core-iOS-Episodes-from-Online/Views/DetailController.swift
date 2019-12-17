@@ -9,22 +9,35 @@
 import UIKit
 
 class DetailController: UIViewController {
+    
+    @IBOutlet weak var episodeImageView: UIImageView!
+    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet weak var episodeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    var episodeDetail: EpisodeData!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateUI(for: episodeDetail)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI(for episode: EpisodeData) {
+        guard let episodeInfo = episodeDetail else {
+            print("could not load episode info")
+            return
+        }
+        episodeTitleLabel.text = episodeInfo.name
+        episodeLabel.text = episodeInfo.number.description
+        descriptionLabel.text = episodeInfo.summary ?? ""
+        
+//        episodeImageView.getImage(with: detail.image?.original ?? "") { (result) in
+//            switch result {
+//            case .failure(let appError):
+//                print("\(appError)")
+//            case .success(let image):
+//                self.episodeImageView.image = image
+//            }
+//        }
     }
-    */
-
 }

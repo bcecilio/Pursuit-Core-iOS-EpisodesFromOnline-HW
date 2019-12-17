@@ -12,6 +12,9 @@ class EpisodesController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var allEpisodes: Show?
+    var allShows: ShowData?
+    
     var episodes = [EpisodeData](){
         didSet {
             DispatchQueue.main.async {
@@ -22,10 +25,13 @@ class EpisodesController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        getEpisodes()
     }
     
     func getEpisodes() {
-        EpisodeAPI.fetchEpisodes { (result) in
+        EpisodeAPI.fetchEpisodes(id: allEpisodes?.id ?? 1) { (result) in
             switch result {
             case .failure(let appError):
                 print("\(appError)")

@@ -9,9 +9,9 @@
 import Foundation
 
 struct EpisodeAPI {
-    static func fetchEpisodes(completion: @escaping (Result<[EpisodeData], AppError>) -> ()) {
+    static func fetchEpisodes(id: Int, completion: @escaping (Result<[EpisodeData], AppError>) -> ()) {
         
-        let urlEpisodes = "https://api.tvmaze.com/shows/139/episodes"
+        let urlEpisodes = "https://api.tvmaze.com/shows/\(id)/episodes"
         
         guard let url = URL(string: urlEpisodes) else {
             completion(.failure(.badURL(urlEpisodes)))

@@ -17,8 +17,8 @@ class EpisodesCell: UITableViewCell {
     
     func configureEpisodeCell(for episodeData: EpisodeData) {
         episodeName.text = episodeData.name
-        episodeLabel.text = episodeData.number.description
-        seasonLabel.text = episodeData.season.description
+        episodeLabel.text = "Episode: \(episodeData.number.description)"
+        seasonLabel.text = "Season: \(episodeData.season.description)"
         
         episodeImageView.getImage(with: episodeData.image?.original ?? "") { (result) in
             switch result {

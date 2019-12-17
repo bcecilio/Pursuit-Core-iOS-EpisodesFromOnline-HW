@@ -13,6 +13,7 @@ struct EpisodeData: Decodable {
     let season: Int
     let number: Int
     let image: Images?
+    let summary: String?
 }
 
 struct Images: Decodable {

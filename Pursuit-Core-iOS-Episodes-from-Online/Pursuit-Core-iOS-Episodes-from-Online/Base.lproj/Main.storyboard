@@ -232,6 +232,12 @@
                         <viewLayoutGuide key="safeArea" id="IV0-ny-jfr"/>
                     </view>
                     <navigationItem key="navigationItem" id="yYc-pN-jbX"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="AXn-V7-fma" id="bsS-YZ-yzg"/>
+                        <outlet property="episodeImageView" destination="nQn-bF-VuD" id="jPe-iC-dmQ"/>
+                        <outlet property="episodeLabel" destination="tnn-iG-xkM" id="L90-0X-PlP"/>
+                        <outlet property="episodeTitleLabel" destination="tnn-iG-xkM" id="XdG-9F-Jfs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Unj-y8-1P0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

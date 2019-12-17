@@ -32,6 +32,13 @@ class ViewController: UIViewController {
         navigationItem.title = "Show Search"
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let episodeController = segue.destination as? EpisodesController, let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        episodeController.allShows = shows[indexPath.row]
+    }
+    
     func getShows(searchQuery: String) {
         ShowsSearchAPI.fetchShows(for: searchQuery) { [weak self] (result) in
             switch result {

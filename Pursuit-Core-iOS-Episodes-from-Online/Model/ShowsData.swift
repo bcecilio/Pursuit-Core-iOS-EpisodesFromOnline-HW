@@ -18,6 +18,7 @@ struct Show: Decodable {
     let rating: Rating?
     let image: Image?
     let summary: String
+    let id: Int
 }
 
 struct Rating: Decodable {
