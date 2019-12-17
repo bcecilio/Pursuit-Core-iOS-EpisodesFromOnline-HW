@@ -30,6 +30,13 @@ class EpisodesController: UIViewController {
         getEpisodes()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let detailController = segue.destination as? DetailController, let indexPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        detailController.episodeDetail = episodes[indexPath.row]
+    }
+    
     func getEpisodes() {
         EpisodeAPI.fetchEpisodes(id: allEpisodes?.id ?? 1) { (result) in
             switch result {

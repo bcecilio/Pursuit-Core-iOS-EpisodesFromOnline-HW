@@ -19,25 +19,27 @@ class DetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI(for: episodeDetail)
+        updateUI()
     }
     
-    func updateUI(for episode: EpisodeData) {
+    func updateUI() {
         guard let episodeInfo = episodeDetail else {
             print("could not load episode info")
             return
         }
         episodeTitleLabel.text = episodeInfo.name
         episodeLabel.text = episodeInfo.number.description
-        descriptionLabel.text = episodeInfo.summary ?? ""
+        descriptionLabel.text = "\(episodeInfo.summary ?? "")"
         
-//        episodeImageView.getImage(with: detail.image?.original ?? "") { (result) in
-//            switch result {
-//            case .failure(let appError):
-//                print("\(appError)")
-//            case .success(let image):
-//                self.episodeImageView.image = image
-//            }
-//        }
+        episodeImageView.getImage(with: episodeDetail.image?.original ?? "") { (result) in
+            switch result {
+            case .failure(let appError):
+                print("\(appError)")
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.episodeImageView.image = image
+                }
+            }
+        }
     }
 }
