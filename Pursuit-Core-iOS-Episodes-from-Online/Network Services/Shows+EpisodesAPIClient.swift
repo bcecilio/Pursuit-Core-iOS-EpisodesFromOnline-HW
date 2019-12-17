@@ -9,11 +9,11 @@
 import Foundation
 
 struct ShowsSearchAPI {
-    static func fetchShows(for searchQuery: String, completion: @escaping (Result<Show, AppError>)-> ()) {
+    static func fetchShows(for searchQuery: String, completion: @escaping (Result<[Show], AppError>)-> ()) {
         
         let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "girls"
         
-        let showsEndPointURL = "http://api.tvmaze.com/search/shows?q=\(searchQuery)"
+        let showsEndPointURL = "https://api.tvmaze.com/search/shows?q=\(searchQuery)"
         
         guard let url = URL(string: showsEndPointURL) else {
             completion(.failure(.badURL(showsEndPointURL)))

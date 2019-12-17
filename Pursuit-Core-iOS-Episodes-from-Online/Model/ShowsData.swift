@@ -9,15 +9,15 @@
 import Foundation
 
 struct ShowData: Decodable {
-    let show: Show
-    let rating: Rating
-    let image: Image
-    let summary: String
+    let show: [Show]
 }
 
 struct Show: Decodable {
     let name: String
     let type: String
+    let rating: Rating
+    let image: Image
+    let summary: String
 }
 
 struct Rating: Decodable {

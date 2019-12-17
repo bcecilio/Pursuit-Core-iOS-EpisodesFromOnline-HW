@@ -13,10 +13,64 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var showSearchBar: UISearchBar!
     
+    var shows = [Show]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
+    var searchQuery = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        showSearchBar.delegate = self
+        getShows(searchQuery: searchQuery)
+        navigationItem.title = "Show Search"
     }
     
+    func getShows(searchQuery: String) {
+        ShowsSearchAPI.fetchShows(for: searchQuery) { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                print("\(appError)")
+            case .success(let shows):
+                self?.shows = shows
+            }
+        }
+    }
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shows.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as? ShowsCell else {
+            fatalError("could not dequeue ShowCell!")
+        }
+        let showCell = shows[indexPath.row]
+        cell.configureShowCell(for: showCell)
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 400
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchText = searchBar.text else {
+            print("missing search text")
+            return
+        }
+        getShows(searchQuery: searchText)
+    }
 }

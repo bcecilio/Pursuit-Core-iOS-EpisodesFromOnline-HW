@@ -10,15 +10,24 @@ import UIKit
 
 class ShowsCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var showImageView: UIImageView!
+    @IBOutlet weak var showLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    
+    func configureShowCell(for show: Show) {
+        showLabel.text = show.name
+        ratingLabel.text = show.rating.rating.description
+        showImageView.getImage(with: show.image.image) { [weak self] (result) in
+            switch result {
+            case .failure(let _):
+                DispatchQueue.main.async {
+                    self?.showImageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.showImageView.image = image
+                }
+            }
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

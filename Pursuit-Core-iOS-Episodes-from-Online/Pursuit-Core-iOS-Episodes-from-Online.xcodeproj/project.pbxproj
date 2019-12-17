@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7732BBC23A743960079898B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7732BBB23A743960079898B /* UIImage+Extensions.swift */; };
 		B7E92C8923A424D20047F0F3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8823A424D20047F0F3 /* AppError.swift */; };
 		B7E92C8B23A424DC0047F0F3 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8A23A424DC0047F0F3 /* NetworkHelper.swift */; };
 		B7E92C8E23A425260047F0F3 /* Shows+EpisodesAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8D23A425260047F0F3 /* Shows+EpisodesAPIClient.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7732BBB23A743960079898B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		B7E92C8823A424D20047F0F3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		B7E92C8A23A424DC0047F0F3 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		B7E92C8D23A425260047F0F3 /* Shows+EpisodesAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shows+EpisodesAPIClient.swift"; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7732BBD23A7439C0079898B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B7732BBB23A743960079898B /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B7E92C8C23A424E30047F0F3 /* Network Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		CD01CD4F232178AF002D0255 = {
 			isa = PBXGroup;
 			children = (
+				B7732BBD23A7439C0079898B /* Extensions */,
 				B7E92C9F23A42F4A0047F0F3 /* Model */,
 				B7E92C9A23A426D10047F0F3 /* Cells */,
 				B7E92C9523A426570047F0F3 /* Views */,
@@ -259,6 +270,7 @@
 				B7E92C9023A425A20047F0F3 /* ViewController.swift in Sources */,
 				B7E92C9223A425B80047F0F3 /* DetailController.swift in Sources */,
 				B7E92C9723A426B90047F0F3 /* ShowsCell.swift in Sources */,
+				B7732BBC23A743960079898B /* UIImage+Extensions.swift in Sources */,
 				B7E92C9923A426CD0047F0F3 /* EpisodesCell.swift in Sources */,
 				B7E92C8E23A425260047F0F3 /* Shows+EpisodesAPIClient.swift in Sources */,
 				B7E92C9423A426500047F0F3 /* EpisodesController.swift in Sources */,
