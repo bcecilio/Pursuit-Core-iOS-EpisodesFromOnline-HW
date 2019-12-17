@@ -25,8 +25,8 @@ struct Rating: Decodable {
 }
 
 struct Image: Decodable {
-    let image: String
-    let original: String
+    let image: String?
+    let original: String?
 }
 
 

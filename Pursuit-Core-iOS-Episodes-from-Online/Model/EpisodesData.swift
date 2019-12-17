@@ -12,7 +12,7 @@ struct EpisodeData: Decodable {
     let name: String
     let season: Int
     let number: Int
-    let image: [Images]
+    let image: Images?
 }
 
 struct Images: Decodable {

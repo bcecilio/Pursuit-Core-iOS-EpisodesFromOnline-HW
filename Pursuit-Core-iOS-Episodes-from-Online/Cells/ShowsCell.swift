@@ -14,10 +14,11 @@ class ShowsCell: UITableViewCell {
     @IBOutlet weak var showLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
-    func configureShowCell(for show: ShowData) {
-        showLabel.text = show.show.name
-        ratingLabel.text = show.show.rating?.rating?.description
-        showImageView.getImage(with: (show.show.image?.image ?? "")) { [weak self] (result) in
+    func configureShowCell(for showData: ShowData) {
+        showLabel.text = showData.show.name
+        ratingLabel.text = showData.show.rating?.rating?.description
+        // USE NETWORK HELPER!!!!!!
+        showImageView.getImage(with: showData.show.image?.original ?? "") { [weak self] (result) in
             switch result {
             case .failure( _):
                 DispatchQueue.main.async {
