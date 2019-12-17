@@ -9,7 +9,7 @@
 import Foundation
 
 struct ShowsSearchAPI {
-    static func fetchShows(for searchQuery: String, completion: @escaping (Result<[Show], AppError>)-> ()) {
+    static func fetchShows(for searchQuery: String, completion: @escaping (Result<[ShowData], AppError>)-> ()) {
         
         let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "girls"
         
@@ -28,8 +28,8 @@ struct ShowsSearchAPI {
                 completion(.failure(.networkClientError(appError)))
             case .success(let data):
                 do {
-                    let result = try JSONDecoder().decode(ShowData.self, from: data)
-                    let shows = result.show
+                    let result = try JSONDecoder().decode([ShowData].self, from: data)
+                    let shows = result
                     completion(.success(shows))
                 } catch {
                     completion(.failure(.decodingError(error)))

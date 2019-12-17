@@ -14,12 +14,12 @@ class ShowsCell: UITableViewCell {
     @IBOutlet weak var showLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     
-    func configureShowCell(for show: Show) {
-        showLabel.text = show.name
-        ratingLabel.text = show.rating.rating.description
-        showImageView.getImage(with: show.image.image) { [weak self] (result) in
+    func configureShowCell(for show: ShowData) {
+        showLabel.text = show.show.name
+        ratingLabel.text = show.show.rating?.rating?.description
+        showImageView.getImage(with: (show.show.image?.image ?? "")) { [weak self] (result) in
             switch result {
-            case .failure(let _):
+            case .failure( _):
                 DispatchQueue.main.async {
                     self?.showImageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
                 }

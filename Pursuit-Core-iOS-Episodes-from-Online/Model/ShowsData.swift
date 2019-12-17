@@ -9,19 +9,19 @@
 import Foundation
 
 struct ShowData: Decodable {
-    let show: [Show]
+    let show: Show
 }
 
 struct Show: Decodable {
     let name: String
     let type: String
-    let rating: Rating
-    let image: Image
+    let rating: Rating?
+    let image: Image?
     let summary: String
 }
 
 struct Rating: Decodable {
-    let rating: Double
+    let rating: Double?
 }
 
 struct Image: Decodable {
