@@ -11,8 +11,48 @@ import UIKit
 class EpisodesController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    var episodes = [EpisodeData](){
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func getEpisodes() {
+        EpisodeAPI.fetchEpisodes { (result) in
+            switch result {
+            case .failure(let appError):
+                print("\(appError)")
+            case .success(let episodes):
+                self.episodes = episodes
+            }
+        }
+    }
+}
+
+extension EpisodesController: UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return episodes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell", for: indexPath) as? EpisodesCell else {
+            fatalError("could not dequeue EpisodeCell")
+        }
+        let episodeCell = episodes[indexPath.row]
+        cell.configureEpisodeCell(for: episodeCell)
+        return cell
+    }
+}
+
+extension EpisodesController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
     }
 }

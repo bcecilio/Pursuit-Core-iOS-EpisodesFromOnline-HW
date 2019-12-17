@@ -106,7 +106,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" rowHeight="212" id="UGb-9C-pBL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" rowHeight="212" id="UGb-9C-pBL" customClass="EpisodesCell" customModule="Pursuit_Core_iOS_Episodes_from_Online" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="212"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UGb-9C-pBL" id="oLf-CM-hLT">
@@ -155,6 +155,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="episodeImageView" destination="KXT-rj-GR0" id="ent-vP-pkh"/>
+                                            <outlet property="episodeLabel" destination="TNU-ey-h9S" id="eJp-wZ-hSm"/>
+                                            <outlet property="episodeName" destination="JGf-bD-bBc" id="LcR-JT-Iei"/>
+                                            <outlet property="seasonLabel" destination="JJt-R4-SEt" id="k87-gg-tvP"/>
                                             <segue destination="mf5-26-bNl" kind="show" id="i5m-a5-9Qd"/>
                                         </connections>
                                     </tableViewCell>
@@ -171,6 +175,9 @@
                         <viewLayoutGuide key="safeArea" id="Q0Z-TT-4eY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Dz0-eK-Jk8"/>
+                    <connections>
+                        <outlet property="tableView" destination="Yud-JE-VmX" id="DfG-EI-LXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HSP-GO-BBQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

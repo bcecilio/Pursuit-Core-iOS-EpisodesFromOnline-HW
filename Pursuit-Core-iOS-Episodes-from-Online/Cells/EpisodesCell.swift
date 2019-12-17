@@ -10,15 +10,27 @@ import UIKit
 
 class EpisodesCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var episodeImageView: UIImageView!
+    @IBOutlet weak var episodeName: UILabel!
+    @IBOutlet weak var seasonLabel: UILabel!
+    @IBOutlet weak var episodeLabel: UILabel!
+    
+    func configureEpisodeCell(for episodeData: EpisodeData) {
+        episodeName.text = episodeData.name
+        episodeLabel.text = episodeData.number.description
+        seasonLabel.text = episodeData.season.description
+        
+        episodeImageView.getImage(with: episodeData.image?.original ?? "") { (result) in
+            switch result {
+            case .failure( _):
+                DispatchQueue.main.async {
+                    self.episodeImageView.image = UIImage(systemName: "exclamationmark.triangle.fill")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self.episodeImageView.image = image
+                }
+            }
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

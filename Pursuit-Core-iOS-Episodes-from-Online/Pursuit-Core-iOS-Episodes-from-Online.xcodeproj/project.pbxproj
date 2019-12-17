@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7351DD423A92F720028D895 /* EpisodesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7351DD323A92F720028D895 /* EpisodesAPI.swift */; };
 		B7732BBC23A743960079898B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7732BBB23A743960079898B /* UIImage+Extensions.swift */; };
 		B7E92C8923A424D20047F0F3 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8823A424D20047F0F3 /* AppError.swift */; };
 		B7E92C8B23A424DC0047F0F3 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E92C8A23A424DC0047F0F3 /* NetworkHelper.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7351DD323A92F720028D895 /* EpisodesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesAPI.swift; sourceTree = "<group>"; };
 		B7732BBB23A743960079898B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		B7E92C8823A424D20047F0F3 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		B7E92C8A23A424DC0047F0F3 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				B7E92C8A23A424DC0047F0F3 /* NetworkHelper.swift */,
 				B7E92C8823A424D20047F0F3 /* AppError.swift */,
 				B7E92C8D23A425260047F0F3 /* Shows+EpisodesAPIClient.swift */,
+				B7351DD323A92F720028D895 /* EpisodesAPI.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7E92C9023A425A20047F0F3 /* ViewController.swift in Sources */,
+				B7351DD423A92F720028D895 /* EpisodesAPI.swift in Sources */,
 				B7E92C9223A425B80047F0F3 /* DetailController.swift in Sources */,
 				B7E92C9723A426B90047F0F3 /* ShowsCell.swift in Sources */,
 				B7732BBC23A743960079898B /* UIImage+Extensions.swift in Sources */,
